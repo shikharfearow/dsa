@@ -2,6 +2,8 @@
     "files.associations": {
         "*.html": "html",
         "*.php": "php",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "new": "cpp",
+        "random": "cpp"
     }
 }

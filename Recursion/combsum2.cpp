@@ -6,7 +6,7 @@
 using namespace std;
 
 void combsum(int i,vector<int> &ds,int a[],int sum,int n){
-    if(sum == 0){
+    if(sum == 0 and ds.size()==3){
         for(auto it: ds){
             cout<<it<<" ";
         }
@@ -24,10 +24,10 @@ void combsum(int i,vector<int> &ds,int a[],int sum,int n){
 }
 
 int  main(){
-    int a[] = {10,1,2,7,6,1,5};
+    int a[] = {10, 5, 5, 5, 2};
     vector<int> ds;
     int n = sizeof(a)/sizeof(a[0]);
     sort(a,a+n);
-    combsum(0,ds,a,8,n);
+    combsum(0,ds,a,12,n);
     return 0;
 }
