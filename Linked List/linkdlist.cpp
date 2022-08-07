@@ -19,6 +19,46 @@ class LinkedList {
     }
 };
 
+LinkedList* reverse(LinkedList* &head){
+
+    if(head==NULL||head->node==NULL)
+    {
+        return head;
+    }
+
+    LinkedList* prev = NULL;
+    LinkedList* curr = head;
+    LinkedList* forward = NULL;
+
+    while(curr!=NULL){
+        forward = curr->node;
+        curr->node = prev;
+        prev = curr;
+        curr = forward;
+    }
+
+    return prev;
+
+}
+
+void middle(LinkedList* head){
+    LinkedList* fast = head;
+    LinkedList* slow = head;
+    int pos = 0;
+    while (fast!=NULL)
+    {
+        fast = fast->node;
+        if(fast!=NULL){
+            pos++; 
+            fast = fast->node;
+            slow = slow->node;
+        }
+    }
+    
+    cout<<"Data: "<<slow->data<<" at "<<pos+1<<endl;
+
+}
+
 void printLL(LinkedList* head){
     LinkedList* temp = head;
     while(temp != NULL){
@@ -106,7 +146,10 @@ int main()
     // insertAtPos(head,tail,23,5);
     // insertAtPos(head,tail,19,6);
     // printLL(head);
-    deleteAtPos(head,tail,6);
+    //deleteAtPos(head,tail,6);
+    //printLL(head);
+    middle(head);
+    reverse(head);
     printLL(head);
     return 0;
 }
